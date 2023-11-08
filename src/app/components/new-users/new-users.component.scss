@@ -1,0 +1,99 @@
+.new-user-registrations {
+  padding: 40px;
+  background-color: var(--app-white);
+  h2 {
+    color: var(--app-text-color-dark);
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    max-height: 340px;
+    overflow: auto;
+    li {
+      .users {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--app-bg-color);
+        .left-container {
+          display: flex;
+          gap: 20px;
+
+          .profile-pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .green-dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              position: absolute;
+              bottom: 5px;
+              right: 0;
+              background-color: var(--app-green);
+            }
+            .blue-dot {
+              width: 10px;
+              border-radius: 50%;
+              height: 10px;
+              position: absolute;
+              bottom: 5px;
+              right: 0;
+              background-color: var(--app-purple);
+            }
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+
+              object-fit: cover;
+              object-position: center right;
+            }
+          }
+          .user-name {
+            min-width: 150px;
+            h3 {
+              color: var(--app-text-color-dark);
+              text-transform: capitalize;
+              margin-bottom: 5px;
+            }
+            p {
+              color: var(--app-text-color-light);
+            }
+          }
+          .progress {
+            width: 150px;
+            position: relative;
+            .bar {
+              display: inline-block;
+              height: 5px;
+              width: 100%;
+              background-color: var(--app-text-color-dark);
+              margin-right: 10px;
+              position: relative;
+              .value {
+                position: absolute;
+                right: -40px;
+                top: -5px;
+              }
+            }
+          }
+        }
+        .more {
+          span {
+            padding: 5px 15px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    padding: 20px;
+  }
+}

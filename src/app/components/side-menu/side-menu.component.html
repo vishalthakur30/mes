@@ -1,0 +1,14 @@
+<div class="menu">
+    <div class="hamburger-icon">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines cliped-line"></div>
+    </div>
+    <div class="menus">
+        <ul>
+            <li *ngFor="let menu of menus;trackBy: trackByFn">
+                <img [src]="menu.icon" alt="icon" class="change-color">
+            </li>
+        </ul>
+    </div>
+</div>

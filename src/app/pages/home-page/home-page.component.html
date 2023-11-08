@@ -1,0 +1,55 @@
+<div class="home-page">
+    <div class="side-menu">
+        <app-side-menu></app-side-menu>
+    </div>
+    <div class="main-content">
+        <div class="header-section">
+            <app-header></app-header>
+        </div>
+        <div class="cards-section">
+            <ng-container *ngFor="let card of topCards;trackBy: trackByFn">
+                <app-card [cardData]="card"></app-card>
+            </ng-container>
+        </div>
+        <div class="orders-section">
+            <div class="orders">
+                <app-orders [orderList]="recentOrderList"></app-orders>
+            </div>
+            <div class="new-users">
+                <app-new-users [users]="newUserList"></app-new-users>
+            </div>
+        </div>
+        <div class="graphs-section">
+            <div class="sales-stats">
+                <h2>Sales Statistics <span>All days <span> <img src="assets/icons/downarrow.svg"  class="change-color" alt="triangle"></span></span></h2>
+                <div class="line-chart">
+                    <apx-chart
+                    [series]="lineChartOptions.series"
+                    [chart]="lineChartOptions.chart"
+                    [xaxis]="lineChartOptions.xaxis"
+                    [dataLabels]="lineChartOptions.dataLabels"
+                    [grid]="lineChartOptions.grid"
+                    [stroke]="lineChartOptions.stroke"
+                    [title]="lineChartOptions.title"
+                    [labels]="lineChartOptions.labels"
+                    [annotations]="lineChartOptions.annotations"
+                  ></apx-chart>
+                </div>
+            </div>
+            <div class="balance-overview">
+                <h2>Balance overview </h2>
+                <div class="bar-chart">
+                    <apx-chart [series]="barChartOptions.series" [chart]="barChartOptions.chart" [plotOptions]="barChartOptions.plotOptions" [dataLabels]="barChartOptions.dataLabels"
+                        [responsive]="barChartOptions.responsive" ></apx-chart>
+                </div>
+            </div>
+            <div class="top-products">
+                <h2>Top products <sup>...</sup></h2>
+                <div class="pie-chart">
+                    <apx-chart [series]="pieChartOptions.series" [chart]="pieChartOptions.chart" [plotOptions]="pieChartOptions.plotOptions" [dataLabels]="pieChartOptions.dataLabels" [colors]="pieChartOptions.colors" [labels]="pieChartOptions.labels"
+                        [responsive]="pieChartOptions.responsive" [legend]="pieChartOptions.legend"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

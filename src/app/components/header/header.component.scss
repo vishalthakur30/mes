@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 50px;
+  max-height: 75px;
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span {
+      font: 1rem;
+      color: var(--app-text-color-light);
+    }
+    img {
+      width: 25px;
+    }
+  }
+  .right-section {
+    display: flex;
+    gap: 20px;
+    .language {
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      span {
+        margin-right: 10px;
+      }
+      img {
+        width: 10px;
+      }
+    }
+    .chats,
+    .notifications {
+      position: relative;
+      width: 25px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+      .green-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        background-color: var(--app-green);
+      }
+      .red-dot {
+        width: 5px;
+        border-radius: 5px;
+        height: 5px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        background-color: var(--app-red);
+      }
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .profile-pic {
+        width: 32px;
+        height: 33px;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: var(--app-text-color-dark);
+      }
+      .downarrow {
+        width: 10px;
+      }
+    }
+  }
+}

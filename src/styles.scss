@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --app-purple: #506de2;
+    --app-dark-purple: #3d5ad0;
+    --app-light-purple: #90a6fb;
+    --app-white: #ffffff;
+    --app-black: #000000;
+    --app-light-green: #76d99e;
+    --app-green: #23cb94;
+    --app-light-red: #f18e9b;
+    --app-light-grey: #edf3f8;
+    --app-dark-grey: #a1a6ba;
+    --app-yellow: #fedc69;
+    --app-red: #f6661f;
+    --app-text-color-dark: #565a69;
+    --app-text-color-light: #c6c5ce;
+    --app-bg-color: #f4f7fc;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.change-color {
+    filter: invert(83%) sepia(10%) saturate(169%) hue-rotate(192deg) brightness(92%) contrast(86%);
+}
+.mw-80 {
+    min-width: 80px;
+}
+.mw-110 {
+    min-width: 110px;
+}
+.mw-150 {
+    min-width: 150px;
+}
+.mw-200 {
+    min-width: 200px;
+}
+.text-center {
+    text-align: center;
+}
+.bg-green {
+    background-color: var(--app-green);
+}
+.bg-red {
+    background-color: var(--app-red);
+}
+.bg-grey {
+    background-color: var(--app-dark-grey);
+}

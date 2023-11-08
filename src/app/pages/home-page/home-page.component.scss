@@ -1,0 +1,113 @@
+.home-page {
+  display: flex;
+  position: relative;
+  .header-section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 75px);
+    background-color: var(--app-white);
+    z-index: 1;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 125px 50px 50px;
+    background-color: var(--app-bg-color);
+    width: calc(100% - 75px);
+    position: relative;
+    .orders-section {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      .new-users {
+        flex: 25%;
+      }
+    }
+    .cards-section {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      overflow: auto;
+    }
+    .graphs-section {
+      display: flex;
+      gap: 30px;
+      .sales-stats {
+        flex: 40%;
+        padding: 40px 40px 0;
+        background-color: var(--app-white);
+        h2 {
+          color: var(--app-text-color-dark);
+          display: flex;
+          text-transform: capitalize;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            width: 10px;
+          }
+          span {
+            opacity: 0.5;
+            font-size: 0.875rem;
+            font-weight: normal;
+          }
+        }
+      }
+      .balance-overview {
+        flex: 40%;
+        padding: 40px 40px 0;
+        background-color: var(--app-white);
+        h2 {
+          color: var(--app-text-color-dark);
+          text-transform: capitalize;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          sup {
+            opacity: 0.5;
+            padding-bottom: 5px;
+          }
+        }
+      }
+      .top-products {
+        background-color: var(--app-white);
+        padding: 40px 40px 0;
+        h2 {
+          color: var(--app-text-color-dark);
+          display: flex;
+          justify-content: space-between;
+          text-transform: capitalize;
+          margin-bottom: 20px;
+          sup {
+            opacity: 0.5;
+            padding-bottom: 5px;
+          }
+        }
+        .pie-chart {
+          flex: 20%;
+          min-width: 400px;
+        }
+      }
+    }
+    @media screen and (max-width: 1440px) {
+      .orders-section {
+        .orders {
+          width: 60%;
+          overflow: auto;
+          background-color: var(--app-white);
+        }
+        .new-users {
+          width: 30%;
+        }
+      }
+      .graphs-section {
+        flex-wrap: wrap;
+        .sales-stats,.top-products,.balance-overview  {
+          padding: 20px 20px 0;
+        }
+      }
+    }
+  }
+}

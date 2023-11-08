@@ -1,0 +1,53 @@
+<div class="orders-component">
+    <h2 class="heading">Recent order</h2>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="mw-80">#</th>
+                    <th class="mw-200">customer</th>
+                    <th class="mw-150">products</th>
+                    <th class="mw-150">delivery date</th>
+                    <th class="mw-150 text-center">status</th>
+                    <th class="mw-150">tracking No#</th>
+                    <th class="mw-110">shipping</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of orderList;index as i;trackBy: trackByFn">
+                    <td class="mw-80">{{ i+1}}</td>
+                    <td class="mw-200">{{data.name}}</td>
+                    <td class="mw-150">{{data.product}}</td>
+                    <td class="mw-150">{{data.delivery_date ? (data.delivery_date | date :'dd MMM, YYYY'): '-'}}</td>
+                    <td class="mw-150 text-center">
+                        <span class="status"
+                            [ngClass]="data.status === 'Paid' ? 'bg-green':data.status ==='Failed'? 'bg-red':'bg-grey'">
+                            {{data.status}}
+                        </span>
+                    </td>
+                    <td class="mw-150">{{data.tracking_no}}</td>
+                    <td class="mw-110">{{data.shipping ? 'Yes' : 'No'}}</td>
+                    <td class="x-icon">
+                        <img src="assets/icons/close.svg" (click)="openModal(data)" alt="icon" class="change-color">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="modalBackdrop" class="modal-backdrop" *ngIf="isVisible">
+    <div class="modal">
+        
+        <h2>{{customerData && customerData.name ? customerData.name : ''}}<span class="modal-close" (click)="closeModal()"><img src="assets/icons/close.svg" alt="icon" class="change-color"></span></h2>
+        <div class="info">
+            <p><span class="label">Product: </span>{{customerData && customerData.product ? customerData.product : '-'}}</p>
+            <p><span  class="label">Delivery data: </span>{{customerData && customerData.delivery_date ? (customerData.delivery_date | date :'dd MMM, YYYY'): '-'}}</p>
+            <p><span  class="label">Status: </span>
+                <span class="status"
+                [ngClass]="customerData.status === 'Paid' ? 'bg-green':customerData.status ==='Failed'? 'bg-red':'bg-grey'">
+                {{customerData.status}}
+            </span></p>
+        </div>
+    </div>
+</div>

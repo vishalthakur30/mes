@@ -1,0 +1,33 @@
+<div class="new-user-registrations">
+    <h2>new user registrations</h2>
+    <ul>
+        <li *ngFor="let user of users;index as i;trackBy: trackByFn">
+            <div class="users">
+                <div class="left-container">
+                    <div class="profile-pic">
+                        <img [src]="user.picture" alt="Picture">
+                        <span [ngClass]="user.isActive ? 'green-dot':'blue-dot'"></span>
+                    </div>
+                    <div class="user-name">
+                        <h3>{{user.name}}</h3>
+                        <p class="country">{{user.country}}</p>
+                    </div>
+                    <div class="progress">
+                        <div class="wrapper">
+                        </div>
+                        <div class="bar" [ngStyle]="{width: user.progress+'%',backgroundColor: progressColor(user.progress),color: progressColor(user.progress)}">
+                            <span class="value">{{user.progress}}%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="more">
+                    <span [ngStyle]="moreColor(user.progress)">More</span>
+                </div>
+            </div>
+                
+                
+            </div>
+        </li>
+    </ul>
+</div>
